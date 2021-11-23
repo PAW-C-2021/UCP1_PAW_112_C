@@ -1,0 +1,40 @@
+﻿@model IEnumerable<UCP1_PAW_112_C.Models.Pembeli>
+
+@{
+    ViewData["Title"] = "Pembeli";
+}
+
+<h1>Pembeli</h1>
+
+<p>
+    <a asp-action="Create">Tambah</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Kode Barang")
+            </th>
+            <th>
+                @Html.DisplayName("Username Pembeli")
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KodeBarang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsernamePembeli)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdPembeli"><i class="fa fa-marker fa-lg"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.IdPembeli"><i class="fas fa-list"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdPembeli"><i class="fa fa-trash-alt fa-lg"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

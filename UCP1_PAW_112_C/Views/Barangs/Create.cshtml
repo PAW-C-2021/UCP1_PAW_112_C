@@ -1,0 +1,48 @@
+﻿@model UCP1_PAW_112_C.Models.Barang
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Barang</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="KodeBarang" class="control-label"></label>
+                <input asp-for="KodeBarang" class="form-control" />
+                <span asp-validation-for="KodeBarang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StokBarang" class="control-label"></label>
+                <input asp-for="StokBarang" class="form-control" />
+                <span asp-validation-for="StokBarang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BanyakBarang" class="control-label"></label>
+                <input asp-for="BanyakBarang" class="form-control" />
+                <span asp-validation-for="BanyakBarang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JenisBarang" class="control-label"></label>
+                <input asp-for="JenisBarang" class="form-control" />
+                <span asp-validation-for="JenisBarang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
